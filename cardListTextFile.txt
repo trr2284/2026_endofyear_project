@@ -1,0 +1,10 @@
+{"Vexscream", "Vexscream.png", "1", "6", "21", "19", "P"}
+{"Dawnmirage", "Dawnmirage.png", "5", "15", "18", "22", "P"}
+{"Blazegolem", "Blazegolem.png", "15", "20", "23", "6", "P"}
+{"Moldvine", "Moldvine.png", "21", "18", "14", "5", "P"}
+{"Vortexwing", "Vortexwing.png", "19", "13", "19", "2", "P"}
+{"Froststep", "Froststep.png", "14", "14", "17", "4", "P"}
+{"Whispghoul", "Whispghoul.png", "17", "19", "3", "2", "P"}
+{"NULL","Placeholder.jpg", "1", "1", "1", "1", "E"}
+{"NULL","Placeholder.jpg", "1", "1", "1", "1", "E"}
+{"NULL","Placeholder.jpg", "1", "1", "1", "1", "E"}

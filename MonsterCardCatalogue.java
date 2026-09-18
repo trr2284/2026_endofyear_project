@@ -4,6 +4,12 @@
  */
 package eoy_project;
 
+import java.io.File; 
+import java.io.FileNotFoundException;
+import java.util.Scanner; 
+
+
+
 /**
  *
  * @author 23038
@@ -36,7 +42,106 @@ public class MonsterCardCatalogue extends javax.swing.JFrame {
         btnSearchButton = new javax.swing.JButton();
         btnCreateButton = new javax.swing.JButton();
         btnDeleteButton = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
+        pnlCard1 = new javax.swing.JPanel();
+        lblCardImage = new javax.swing.JLabel();
+        lblCardName = new javax.swing.JLabel();
+        lblCardStrength = new javax.swing.JLabel();
+        lblCardSpeed = new javax.swing.JLabel();
+        lblCardStealth = new javax.swing.JLabel();
+        lblCardCunning = new javax.swing.JLabel();
+        pnlCard2 = new javax.swing.JPanel();
+        lblCardImage2 = new javax.swing.JLabel();
+        lblCardName2 = new javax.swing.JLabel();
+        lblCardStrength2 = new javax.swing.JLabel();
+        lblCardSpeed2 = new javax.swing.JLabel();
+        lblCardStealth2 = new javax.swing.JLabel();
+        lblCardCunning2 = new javax.swing.JLabel();
+        pnlCard3 = new javax.swing.JPanel();
+        lblCardImage3 = new javax.swing.JLabel();
+        lblCardName3 = new javax.swing.JLabel();
+        lblCardStrength3 = new javax.swing.JLabel();
+        lblCardSpeed3 = new javax.swing.JLabel();
+        lblCardStealth3 = new javax.swing.JLabel();
+        lblCardCunning3 = new javax.swing.JLabel();
+        pnlCard4 = new javax.swing.JPanel();
+        lblCardImage4 = new javax.swing.JLabel();
+        lblCardName4 = new javax.swing.JLabel();
+        lblCardStrength4 = new javax.swing.JLabel();
+        lblCardSpeed4 = new javax.swing.JLabel();
+        lblCardStealth4 = new javax.swing.JLabel();
+        lblCardCunning4 = new javax.swing.JLabel();
+        pnlCard5 = new javax.swing.JPanel();
+        lblCardImage5 = new javax.swing.JLabel();
+        lblCardName5 = new javax.swing.JLabel();
+        lblCardStrength5 = new javax.swing.JLabel();
+        lblCardSpeed5 = new javax.swing.JLabel();
+        lblCardStealth5 = new javax.swing.JLabel();
+        lblCardCunning5 = new javax.swing.JLabel();
+        pnlCard6 = new javax.swing.JPanel();
+        lblCardImage6 = new javax.swing.JLabel();
+        lblCardName6 = new javax.swing.JLabel();
+        lblCardStrength6 = new javax.swing.JLabel();
+        lblCardSpeed6 = new javax.swing.JLabel();
+        lblCardStealth6 = new javax.swing.JLabel();
+        lblCardCunning6 = new javax.swing.JLabel();
+        pnlCard7 = new javax.swing.JPanel();
+        lblCardImage7 = new javax.swing.JLabel();
+        lblCardName7 = new javax.swing.JLabel();
+        lblCardStrength7 = new javax.swing.JLabel();
+        lblCardSpeed7 = new javax.swing.JLabel();
+        lblCardStealth7 = new javax.swing.JLabel();
+        lblCardCunning7 = new javax.swing.JLabel();
+        pnlCard8 = new javax.swing.JPanel();
+        lblCardImage8 = new javax.swing.JLabel();
+        lblCardName8 = new javax.swing.JLabel();
+        lblCardStrength8 = new javax.swing.JLabel();
+        lblCardSpeed8 = new javax.swing.JLabel();
+        lblCardStealth8 = new javax.swing.JLabel();
+        lblCardCunning8 = new javax.swing.JLabel();
+        pnlCard9 = new javax.swing.JPanel();
+        lblCardImage9 = new javax.swing.JLabel();
+        lblCardName9 = new javax.swing.JLabel();
+        lblCardStrength9 = new javax.swing.JLabel();
+        lblCardSpeed9 = new javax.swing.JLabel();
+        lblCardStealth9 = new javax.swing.JLabel();
+        lblCardCunning9 = new javax.swing.JLabel();
+        pnlCard10 = new javax.swing.JPanel();
+        lblCardImage10 = new javax.swing.JLabel();
+        lblCardName10 = new javax.swing.JLabel();
+        lblCardStrength10 = new javax.swing.JLabel();
+        lblCardSpeed10 = new javax.swing.JLabel();
+        lblCardStealth10 = new javax.swing.JLabel();
+        lblCardCunning10 = new javax.swing.JLabel();
+        pnlCreatePanel = new javax.swing.JPanel();
+        pnlCreatedCard = new javax.swing.JPanel();
+        lblCardImageCreated = new javax.swing.JLabel();
+        lblCardNameCreated = new javax.swing.JLabel();
+        lblCardStrengthCreated = new javax.swing.JLabel();
+        lblCardSpeedCreated = new javax.swing.JLabel();
+        lblCardStealthCreated = new javax.swing.JLabel();
+        lblCardCunningCreated = new javax.swing.JLabel();
+        lblCreateTitle = new javax.swing.JLabel();
+        lblCreateCard = new javax.swing.JLabel();
+        txtCreateCardNameEntry = new javax.swing.JTextField();
+        lblStrengthValue = new javax.swing.JLabel();
+        sldStrengthSlider = new javax.swing.JSlider();
+        lblSpeedValue = new javax.swing.JLabel();
+        sldSpeedSlider = new javax.swing.JSlider();
+        lblStealthValue = new javax.swing.JLabel();
+        sldStealthSlider = new javax.swing.JSlider();
+        lblCunningValue = new javax.swing.JLabel();
+        sldCunningSlider = new javax.swing.JSlider();
+        txtStrengthInput = new javax.swing.JTextField();
+        txtStrengthInput1 = new javax.swing.JTextField();
+        txtStrengthInput2 = new javax.swing.JTextField();
+        txtStrengthInput3 = new javax.swing.JTextField();
+        btnCreateCard = new javax.swing.JButton();
+        btnQuitCreate = new javax.swing.JButton();
+        btnDiscardCard = new javax.swing.JButton();
+        btnUploadImage = new javax.swing.JButton();
+        btnChooseImage = new javax.swing.JButton();
+        lblResizeImageTip = new javax.swing.JLabel();
+        lblUploadImageTip = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAutoRequestFocus(false);
@@ -81,79 +186,1093 @@ public class MonsterCardCatalogue extends javax.swing.JFrame {
         btnDeleteButton.setText("Delete");
         btnDeleteButton.addActionListener(this::btnDeleteButtonActionPerformed);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 130, Short.MAX_VALUE)
+        pnlCard1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+
+        lblCardImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/eoy_project/placeholder.jpg"))); // NOI18N
+        lblCardImage.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+
+        lblCardName.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        lblCardName.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblCardName.setText("[Name]");
+
+        lblCardStrength.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        lblCardStrength.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblCardStrength.setText("STR:25");
+
+        lblCardSpeed.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        lblCardSpeed.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblCardSpeed.setText("SPD:25");
+
+        lblCardStealth.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        lblCardStealth.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblCardStealth.setText("STH:25");
+
+        lblCardCunning.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        lblCardCunning.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblCardCunning.setText("CNG:25");
+
+        javax.swing.GroupLayout pnlCard1Layout = new javax.swing.GroupLayout(pnlCard1);
+        pnlCard1.setLayout(pnlCard1Layout);
+        pnlCard1Layout.setHorizontalGroup(
+            pnlCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlCard1Layout.createSequentialGroup()
+                .addGroup(pnlCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlCard1Layout.createSequentialGroup()
+                        .addGroup(pnlCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlCard1Layout.createSequentialGroup()
+                                .addGap(32, 32, 32)
+                                .addComponent(lblCardName))
+                            .addGroup(pnlCard1Layout.createSequentialGroup()
+                                .addGap(20, 20, 20)
+                                .addComponent(lblCardImage)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(pnlCard1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(pnlCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlCard1Layout.createSequentialGroup()
+                                .addComponent(lblCardStrength)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lblCardSpeed))
+                            .addGroup(pnlCard1Layout.createSequentialGroup()
+                                .addComponent(lblCardStealth)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                                .addComponent(lblCardCunning)))))
+                .addContainerGap())
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 200, Short.MAX_VALUE)
+        pnlCard1Layout.setVerticalGroup(
+            pnlCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlCard1Layout.createSequentialGroup()
+                .addGap(8, 8, 8)
+                .addComponent(lblCardImage)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblCardName)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCardStrength)
+                    .addComponent(lblCardSpeed))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCardStealth)
+                    .addComponent(lblCardCunning))
+                .addContainerGap(22, Short.MAX_VALUE))
+        );
+
+        pnlCard2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+
+        lblCardImage2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/eoy_project/placeholder.jpg"))); // NOI18N
+        lblCardImage2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+
+        lblCardName2.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        lblCardName2.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblCardName2.setText("[Name]");
+
+        lblCardStrength2.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        lblCardStrength2.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblCardStrength2.setText("STR:25");
+
+        lblCardSpeed2.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        lblCardSpeed2.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblCardSpeed2.setText("SPD:25");
+
+        lblCardStealth2.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        lblCardStealth2.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblCardStealth2.setText("STH:25");
+
+        lblCardCunning2.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        lblCardCunning2.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblCardCunning2.setText("CNG:25");
+
+        javax.swing.GroupLayout pnlCard2Layout = new javax.swing.GroupLayout(pnlCard2);
+        pnlCard2.setLayout(pnlCard2Layout);
+        pnlCard2Layout.setHorizontalGroup(
+            pnlCard2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlCard2Layout.createSequentialGroup()
+                .addGroup(pnlCard2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlCard2Layout.createSequentialGroup()
+                        .addGroup(pnlCard2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlCard2Layout.createSequentialGroup()
+                                .addGap(32, 32, 32)
+                                .addComponent(lblCardName2))
+                            .addGroup(pnlCard2Layout.createSequentialGroup()
+                                .addGap(20, 20, 20)
+                                .addComponent(lblCardImage2)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(pnlCard2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(pnlCard2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlCard2Layout.createSequentialGroup()
+                                .addComponent(lblCardStrength2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lblCardSpeed2))
+                            .addGroup(pnlCard2Layout.createSequentialGroup()
+                                .addComponent(lblCardStealth2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                                .addComponent(lblCardCunning2)))))
+                .addContainerGap())
+        );
+        pnlCard2Layout.setVerticalGroup(
+            pnlCard2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlCard2Layout.createSequentialGroup()
+                .addGap(8, 8, 8)
+                .addComponent(lblCardImage2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblCardName2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlCard2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCardStrength2)
+                    .addComponent(lblCardSpeed2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlCard2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCardStealth2)
+                    .addComponent(lblCardCunning2))
+                .addContainerGap(22, Short.MAX_VALUE))
+        );
+
+        pnlCard3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+
+        lblCardImage3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/eoy_project/placeholder.jpg"))); // NOI18N
+        lblCardImage3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+
+        lblCardName3.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        lblCardName3.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblCardName3.setText("[Name]");
+
+        lblCardStrength3.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        lblCardStrength3.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblCardStrength3.setText("STR:25");
+
+        lblCardSpeed3.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        lblCardSpeed3.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblCardSpeed3.setText("SPD:25");
+
+        lblCardStealth3.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        lblCardStealth3.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblCardStealth3.setText("STH:25");
+
+        lblCardCunning3.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        lblCardCunning3.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblCardCunning3.setText("CNG:25");
+
+        javax.swing.GroupLayout pnlCard3Layout = new javax.swing.GroupLayout(pnlCard3);
+        pnlCard3.setLayout(pnlCard3Layout);
+        pnlCard3Layout.setHorizontalGroup(
+            pnlCard3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlCard3Layout.createSequentialGroup()
+                .addGroup(pnlCard3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlCard3Layout.createSequentialGroup()
+                        .addGroup(pnlCard3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlCard3Layout.createSequentialGroup()
+                                .addGap(32, 32, 32)
+                                .addComponent(lblCardName3))
+                            .addGroup(pnlCard3Layout.createSequentialGroup()
+                                .addGap(20, 20, 20)
+                                .addComponent(lblCardImage3)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(pnlCard3Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(pnlCard3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlCard3Layout.createSequentialGroup()
+                                .addComponent(lblCardStrength3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lblCardSpeed3))
+                            .addGroup(pnlCard3Layout.createSequentialGroup()
+                                .addComponent(lblCardStealth3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                                .addComponent(lblCardCunning3)))))
+                .addContainerGap())
+        );
+        pnlCard3Layout.setVerticalGroup(
+            pnlCard3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlCard3Layout.createSequentialGroup()
+                .addGap(8, 8, 8)
+                .addComponent(lblCardImage3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblCardName3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlCard3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCardStrength3)
+                    .addComponent(lblCardSpeed3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlCard3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCardStealth3)
+                    .addComponent(lblCardCunning3))
+                .addContainerGap(22, Short.MAX_VALUE))
+        );
+
+        pnlCard4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+
+        lblCardImage4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/eoy_project/placeholder.jpg"))); // NOI18N
+        lblCardImage4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+
+        lblCardName4.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        lblCardName4.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblCardName4.setText("[Name]");
+
+        lblCardStrength4.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        lblCardStrength4.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblCardStrength4.setText("STR:25");
+
+        lblCardSpeed4.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        lblCardSpeed4.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblCardSpeed4.setText("SPD:25");
+
+        lblCardStealth4.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        lblCardStealth4.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblCardStealth4.setText("STH:25");
+
+        lblCardCunning4.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        lblCardCunning4.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblCardCunning4.setText("CNG:25");
+
+        javax.swing.GroupLayout pnlCard4Layout = new javax.swing.GroupLayout(pnlCard4);
+        pnlCard4.setLayout(pnlCard4Layout);
+        pnlCard4Layout.setHorizontalGroup(
+            pnlCard4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlCard4Layout.createSequentialGroup()
+                .addGroup(pnlCard4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlCard4Layout.createSequentialGroup()
+                        .addGroup(pnlCard4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlCard4Layout.createSequentialGroup()
+                                .addGap(32, 32, 32)
+                                .addComponent(lblCardName4))
+                            .addGroup(pnlCard4Layout.createSequentialGroup()
+                                .addGap(20, 20, 20)
+                                .addComponent(lblCardImage4)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(pnlCard4Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(pnlCard4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlCard4Layout.createSequentialGroup()
+                                .addComponent(lblCardStrength4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lblCardSpeed4))
+                            .addGroup(pnlCard4Layout.createSequentialGroup()
+                                .addComponent(lblCardStealth4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                                .addComponent(lblCardCunning4)))))
+                .addContainerGap())
+        );
+        pnlCard4Layout.setVerticalGroup(
+            pnlCard4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlCard4Layout.createSequentialGroup()
+                .addGap(8, 8, 8)
+                .addComponent(lblCardImage4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblCardName4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlCard4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCardStrength4)
+                    .addComponent(lblCardSpeed4))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlCard4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCardStealth4)
+                    .addComponent(lblCardCunning4))
+                .addContainerGap(22, Short.MAX_VALUE))
+        );
+
+        pnlCard5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+
+        lblCardImage5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/eoy_project/placeholder.jpg"))); // NOI18N
+        lblCardImage5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+
+        lblCardName5.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        lblCardName5.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblCardName5.setText("[Name]");
+
+        lblCardStrength5.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        lblCardStrength5.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblCardStrength5.setText("STR:25");
+
+        lblCardSpeed5.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        lblCardSpeed5.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblCardSpeed5.setText("SPD:25");
+
+        lblCardStealth5.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        lblCardStealth5.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblCardStealth5.setText("STH:25");
+
+        lblCardCunning5.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        lblCardCunning5.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblCardCunning5.setText("CNG:25");
+
+        javax.swing.GroupLayout pnlCard5Layout = new javax.swing.GroupLayout(pnlCard5);
+        pnlCard5.setLayout(pnlCard5Layout);
+        pnlCard5Layout.setHorizontalGroup(
+            pnlCard5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlCard5Layout.createSequentialGroup()
+                .addGroup(pnlCard5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlCard5Layout.createSequentialGroup()
+                        .addGroup(pnlCard5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlCard5Layout.createSequentialGroup()
+                                .addGap(32, 32, 32)
+                                .addComponent(lblCardName5))
+                            .addGroup(pnlCard5Layout.createSequentialGroup()
+                                .addGap(20, 20, 20)
+                                .addComponent(lblCardImage5)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(pnlCard5Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(pnlCard5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlCard5Layout.createSequentialGroup()
+                                .addComponent(lblCardStrength5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lblCardSpeed5))
+                            .addGroup(pnlCard5Layout.createSequentialGroup()
+                                .addComponent(lblCardStealth5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                                .addComponent(lblCardCunning5)))))
+                .addContainerGap())
+        );
+        pnlCard5Layout.setVerticalGroup(
+            pnlCard5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlCard5Layout.createSequentialGroup()
+                .addGap(8, 8, 8)
+                .addComponent(lblCardImage5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblCardName5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlCard5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCardStrength5)
+                    .addComponent(lblCardSpeed5))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlCard5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCardStealth5)
+                    .addComponent(lblCardCunning5))
+                .addContainerGap(22, Short.MAX_VALUE))
+        );
+
+        pnlCard6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+
+        lblCardImage6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/eoy_project/placeholder.jpg"))); // NOI18N
+        lblCardImage6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+
+        lblCardName6.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        lblCardName6.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblCardName6.setText("[Name]");
+
+        lblCardStrength6.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        lblCardStrength6.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblCardStrength6.setText("STR:25");
+
+        lblCardSpeed6.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        lblCardSpeed6.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblCardSpeed6.setText("SPD:25");
+
+        lblCardStealth6.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        lblCardStealth6.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblCardStealth6.setText("STH:25");
+
+        lblCardCunning6.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        lblCardCunning6.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblCardCunning6.setText("CNG:25");
+
+        javax.swing.GroupLayout pnlCard6Layout = new javax.swing.GroupLayout(pnlCard6);
+        pnlCard6.setLayout(pnlCard6Layout);
+        pnlCard6Layout.setHorizontalGroup(
+            pnlCard6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlCard6Layout.createSequentialGroup()
+                .addGroup(pnlCard6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlCard6Layout.createSequentialGroup()
+                        .addGroup(pnlCard6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlCard6Layout.createSequentialGroup()
+                                .addGap(32, 32, 32)
+                                .addComponent(lblCardName6))
+                            .addGroup(pnlCard6Layout.createSequentialGroup()
+                                .addGap(20, 20, 20)
+                                .addComponent(lblCardImage6)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(pnlCard6Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(pnlCard6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlCard6Layout.createSequentialGroup()
+                                .addComponent(lblCardStrength6)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lblCardSpeed6))
+                            .addGroup(pnlCard6Layout.createSequentialGroup()
+                                .addComponent(lblCardStealth6)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                                .addComponent(lblCardCunning6)))))
+                .addContainerGap())
+        );
+        pnlCard6Layout.setVerticalGroup(
+            pnlCard6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlCard6Layout.createSequentialGroup()
+                .addGap(8, 8, 8)
+                .addComponent(lblCardImage6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblCardName6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlCard6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCardStrength6)
+                    .addComponent(lblCardSpeed6))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlCard6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCardStealth6)
+                    .addComponent(lblCardCunning6))
+                .addContainerGap(22, Short.MAX_VALUE))
+        );
+
+        pnlCard7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+
+        lblCardImage7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/eoy_project/placeholder.jpg"))); // NOI18N
+        lblCardImage7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+
+        lblCardName7.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        lblCardName7.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblCardName7.setText("[Name]");
+
+        lblCardStrength7.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        lblCardStrength7.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblCardStrength7.setText("STR:25");
+
+        lblCardSpeed7.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        lblCardSpeed7.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblCardSpeed7.setText("SPD:25");
+
+        lblCardStealth7.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        lblCardStealth7.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblCardStealth7.setText("STH:25");
+
+        lblCardCunning7.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        lblCardCunning7.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblCardCunning7.setText("CNG:25");
+
+        javax.swing.GroupLayout pnlCard7Layout = new javax.swing.GroupLayout(pnlCard7);
+        pnlCard7.setLayout(pnlCard7Layout);
+        pnlCard7Layout.setHorizontalGroup(
+            pnlCard7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlCard7Layout.createSequentialGroup()
+                .addGroup(pnlCard7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlCard7Layout.createSequentialGroup()
+                        .addGroup(pnlCard7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlCard7Layout.createSequentialGroup()
+                                .addGap(32, 32, 32)
+                                .addComponent(lblCardName7))
+                            .addGroup(pnlCard7Layout.createSequentialGroup()
+                                .addGap(20, 20, 20)
+                                .addComponent(lblCardImage7)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(pnlCard7Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(pnlCard7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlCard7Layout.createSequentialGroup()
+                                .addComponent(lblCardStrength7)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lblCardSpeed7))
+                            .addGroup(pnlCard7Layout.createSequentialGroup()
+                                .addComponent(lblCardStealth7)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                                .addComponent(lblCardCunning7)))))
+                .addContainerGap())
+        );
+        pnlCard7Layout.setVerticalGroup(
+            pnlCard7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlCard7Layout.createSequentialGroup()
+                .addGap(8, 8, 8)
+                .addComponent(lblCardImage7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblCardName7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlCard7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCardStrength7)
+                    .addComponent(lblCardSpeed7))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlCard7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCardStealth7)
+                    .addComponent(lblCardCunning7))
+                .addContainerGap(22, Short.MAX_VALUE))
+        );
+
+        pnlCard8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+
+        lblCardImage8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/eoy_project/placeholder.jpg"))); // NOI18N
+        lblCardImage8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+
+        lblCardName8.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        lblCardName8.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblCardName8.setText("[Name]");
+
+        lblCardStrength8.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        lblCardStrength8.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblCardStrength8.setText("STR:25");
+
+        lblCardSpeed8.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        lblCardSpeed8.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblCardSpeed8.setText("SPD:25");
+
+        lblCardStealth8.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        lblCardStealth8.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblCardStealth8.setText("STH:25");
+
+        lblCardCunning8.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        lblCardCunning8.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblCardCunning8.setText("CNG:25");
+
+        javax.swing.GroupLayout pnlCard8Layout = new javax.swing.GroupLayout(pnlCard8);
+        pnlCard8.setLayout(pnlCard8Layout);
+        pnlCard8Layout.setHorizontalGroup(
+            pnlCard8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlCard8Layout.createSequentialGroup()
+                .addGroup(pnlCard8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlCard8Layout.createSequentialGroup()
+                        .addGroup(pnlCard8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlCard8Layout.createSequentialGroup()
+                                .addGap(32, 32, 32)
+                                .addComponent(lblCardName8))
+                            .addGroup(pnlCard8Layout.createSequentialGroup()
+                                .addGap(20, 20, 20)
+                                .addComponent(lblCardImage8)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(pnlCard8Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(pnlCard8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlCard8Layout.createSequentialGroup()
+                                .addComponent(lblCardStrength8)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lblCardSpeed8))
+                            .addGroup(pnlCard8Layout.createSequentialGroup()
+                                .addComponent(lblCardStealth8)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                                .addComponent(lblCardCunning8)))))
+                .addContainerGap())
+        );
+        pnlCard8Layout.setVerticalGroup(
+            pnlCard8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlCard8Layout.createSequentialGroup()
+                .addGap(8, 8, 8)
+                .addComponent(lblCardImage8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblCardName8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlCard8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCardStrength8)
+                    .addComponent(lblCardSpeed8))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlCard8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCardStealth8)
+                    .addComponent(lblCardCunning8))
+                .addContainerGap(22, Short.MAX_VALUE))
+        );
+
+        pnlCard9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+
+        lblCardImage9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/eoy_project/placeholder.jpg"))); // NOI18N
+        lblCardImage9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+
+        lblCardName9.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        lblCardName9.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblCardName9.setText("[Name]");
+
+        lblCardStrength9.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        lblCardStrength9.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblCardStrength9.setText("STR:25");
+
+        lblCardSpeed9.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        lblCardSpeed9.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblCardSpeed9.setText("SPD:25");
+
+        lblCardStealth9.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        lblCardStealth9.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblCardStealth9.setText("STH:25");
+
+        lblCardCunning9.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        lblCardCunning9.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblCardCunning9.setText("CNG:25");
+
+        javax.swing.GroupLayout pnlCard9Layout = new javax.swing.GroupLayout(pnlCard9);
+        pnlCard9.setLayout(pnlCard9Layout);
+        pnlCard9Layout.setHorizontalGroup(
+            pnlCard9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlCard9Layout.createSequentialGroup()
+                .addGroup(pnlCard9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlCard9Layout.createSequentialGroup()
+                        .addGroup(pnlCard9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlCard9Layout.createSequentialGroup()
+                                .addGap(32, 32, 32)
+                                .addComponent(lblCardName9))
+                            .addGroup(pnlCard9Layout.createSequentialGroup()
+                                .addGap(20, 20, 20)
+                                .addComponent(lblCardImage9)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(pnlCard9Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(pnlCard9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlCard9Layout.createSequentialGroup()
+                                .addComponent(lblCardStrength9)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lblCardSpeed9))
+                            .addGroup(pnlCard9Layout.createSequentialGroup()
+                                .addComponent(lblCardStealth9)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                                .addComponent(lblCardCunning9)))))
+                .addContainerGap())
+        );
+        pnlCard9Layout.setVerticalGroup(
+            pnlCard9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlCard9Layout.createSequentialGroup()
+                .addGap(8, 8, 8)
+                .addComponent(lblCardImage9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblCardName9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlCard9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCardStrength9)
+                    .addComponent(lblCardSpeed9))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlCard9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCardStealth9)
+                    .addComponent(lblCardCunning9))
+                .addContainerGap(22, Short.MAX_VALUE))
+        );
+
+        pnlCard10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+
+        lblCardImage10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/eoy_project/placeholder.jpg"))); // NOI18N
+        lblCardImage10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+
+        lblCardName10.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        lblCardName10.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblCardName10.setText("[Name]");
+
+        lblCardStrength10.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        lblCardStrength10.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblCardStrength10.setText("STR:25");
+
+        lblCardSpeed10.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        lblCardSpeed10.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblCardSpeed10.setText("SPD:25");
+
+        lblCardStealth10.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        lblCardStealth10.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblCardStealth10.setText("STH:25");
+
+        lblCardCunning10.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        lblCardCunning10.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblCardCunning10.setText("CNG:25");
+
+        javax.swing.GroupLayout pnlCard10Layout = new javax.swing.GroupLayout(pnlCard10);
+        pnlCard10.setLayout(pnlCard10Layout);
+        pnlCard10Layout.setHorizontalGroup(
+            pnlCard10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlCard10Layout.createSequentialGroup()
+                .addGroup(pnlCard10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlCard10Layout.createSequentialGroup()
+                        .addGroup(pnlCard10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlCard10Layout.createSequentialGroup()
+                                .addGap(32, 32, 32)
+                                .addComponent(lblCardName10))
+                            .addGroup(pnlCard10Layout.createSequentialGroup()
+                                .addGap(20, 20, 20)
+                                .addComponent(lblCardImage10)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(pnlCard10Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(pnlCard10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlCard10Layout.createSequentialGroup()
+                                .addComponent(lblCardStrength10)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lblCardSpeed10))
+                            .addGroup(pnlCard10Layout.createSequentialGroup()
+                                .addComponent(lblCardStealth10)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                                .addComponent(lblCardCunning10)))))
+                .addContainerGap())
+        );
+        pnlCard10Layout.setVerticalGroup(
+            pnlCard10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlCard10Layout.createSequentialGroup()
+                .addGap(8, 8, 8)
+                .addComponent(lblCardImage10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblCardName10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlCard10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCardStrength10)
+                    .addComponent(lblCardSpeed10))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlCard10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCardStealth10)
+                    .addComponent(lblCardCunning10))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout pnlHomePanelLayout = new javax.swing.GroupLayout(pnlHomePanel);
         pnlHomePanel.setLayout(pnlHomePanelLayout);
         pnlHomePanelLayout.setHorizontalGroup(
             pnlHomePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlHomePanelLayout.createSequentialGroup()
-                .addGroup(pnlHomePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnlHomePanelLayout.createSequentialGroup()
-                        .addGap(362, 362, 362)
+            .addGroup(pnlHomePanelLayout.createSequentialGroup()
+                .addGap(139, 139, 139)
+                .addGroup(pnlHomePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlHomePanelLayout.createSequentialGroup()
+                        .addComponent(btnDeleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(42, 42, 42)
+                        .addComponent(btnQuitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(143, 143, 143))
+                    .addGroup(pnlHomePanelLayout.createSequentialGroup()
+                        .addGap(52, 52, 52)
                         .addComponent(btnCreateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(51, 51, 51)
+                        .addGap(45, 45, 45)
                         .addComponent(btnSearchButton, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                        .addGap(53, 53, 53)
                         .addComponent(btnTextFileOutput, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(pnlHomePanelLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(pnlCard6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(pnlCard7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(pnlCard8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(pnlCard9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(pnlCard10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlHomePanelLayout.createSequentialGroup()
+                        .addComponent(pnlCard1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(pnlCard2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(pnlCard3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(pnlCard4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(pnlCard5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlHomePanelLayout.createSequentialGroup()
+                        .addGap(16, 16, 16)
                         .addComponent(lblTitle)))
-                .addGap(236, 236, 236))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlHomePanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnDeleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(56, 56, 56)
-                .addComponent(btnQuitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(340, 340, 340))
-            .addGroup(pnlHomePanelLayout.createSequentialGroup()
-                .addGap(113, 113, 113)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(273, Short.MAX_VALUE))
         );
         pnlHomePanelLayout.setVerticalGroup(
             pnlHomePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlHomePanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lblTitle)
-                .addGap(54, 54, 54)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 203, Short.MAX_VALUE)
-                .addGroup(pnlHomePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnTextFileOutput, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSearchButton, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnCreateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(46, 46, 46)
+                .addGroup(pnlHomePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(pnlCard1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pnlCard2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pnlCard3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pnlCard4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pnlCard5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlHomePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(pnlCard6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pnlCard7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pnlCard8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pnlCard9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pnlCard10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(pnlHomePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(pnlHomePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnSearchButton, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCreateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnTextFileOutput, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(pnlHomePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnDeleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnQuitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(17, 17, 17))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        pnlParentPanel.add(pnlHomePanel, "card2");
+
+        pnlCreatePanel.setBackground(new java.awt.Color(255, 231, 194));
+        pnlCreatePanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 235, 153), 12));
+        pnlCreatePanel.setForeground(new java.awt.Color(255, 231, 194));
+
+        pnlCreatedCard.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+
+        lblCardImageCreated.setIcon(new javax.swing.ImageIcon(getClass().getResource("/eoy_project/placeholder.jpg"))); // NOI18N
+        lblCardImageCreated.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+
+        lblCardNameCreated.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        lblCardNameCreated.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblCardNameCreated.setText("[Name]");
+
+        lblCardStrengthCreated.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        lblCardStrengthCreated.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblCardStrengthCreated.setText("STR:25");
+
+        lblCardSpeedCreated.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        lblCardSpeedCreated.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblCardSpeedCreated.setText("SPD:25");
+
+        lblCardStealthCreated.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        lblCardStealthCreated.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblCardStealthCreated.setText("STH:25");
+
+        lblCardCunningCreated.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        lblCardCunningCreated.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblCardCunningCreated.setText("CNG:25");
+
+        javax.swing.GroupLayout pnlCreatedCardLayout = new javax.swing.GroupLayout(pnlCreatedCard);
+        pnlCreatedCard.setLayout(pnlCreatedCardLayout);
+        pnlCreatedCardLayout.setHorizontalGroup(
+            pnlCreatedCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlCreatedCardLayout.createSequentialGroup()
+                .addGroup(pnlCreatedCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlCreatedCardLayout.createSequentialGroup()
+                        .addGroup(pnlCreatedCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlCreatedCardLayout.createSequentialGroup()
+                                .addGap(32, 32, 32)
+                                .addComponent(lblCardNameCreated))
+                            .addGroup(pnlCreatedCardLayout.createSequentialGroup()
+                                .addGap(20, 20, 20)
+                                .addComponent(lblCardImageCreated)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(pnlCreatedCardLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(pnlCreatedCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlCreatedCardLayout.createSequentialGroup()
+                                .addComponent(lblCardStrengthCreated)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lblCardSpeedCreated))
+                            .addGroup(pnlCreatedCardLayout.createSequentialGroup()
+                                .addComponent(lblCardStealthCreated)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                                .addComponent(lblCardCunningCreated)))))
+                .addContainerGap())
+        );
+        pnlCreatedCardLayout.setVerticalGroup(
+            pnlCreatedCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlCreatedCardLayout.createSequentialGroup()
+                .addGap(8, 8, 8)
+                .addComponent(lblCardImageCreated)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblCardNameCreated)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlCreatedCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCardStrengthCreated)
+                    .addComponent(lblCardSpeedCreated))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlCreatedCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCardStealthCreated)
+                    .addComponent(lblCardCunningCreated))
+                .addContainerGap(22, Short.MAX_VALUE))
+        );
+
+        lblCreateTitle.setFont(new java.awt.Font("Montserrat", 1, 48)); // NOI18N
+        lblCreateTitle.setText("Create A Card:");
+
+        lblCreateCard.setFont(new java.awt.Font("Montserrat", 1, 24)); // NOI18N
+        lblCreateCard.setText("Name:");
+
+        txtCreateCardNameEntry.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
+        txtCreateCardNameEntry.setText("\"Name\"");
+        txtCreateCardNameEntry.addActionListener(this::txtCreateCardNameEntryActionPerformed);
+
+        lblStrengthValue.setFont(new java.awt.Font("Montserrat", 1, 24)); // NOI18N
+        lblStrengthValue.setText("Strength:");
+
+        sldStrengthSlider.setMajorTickSpacing(5);
+        sldStrengthSlider.setMaximum(25);
+        sldStrengthSlider.setMinimum(1);
+        sldStrengthSlider.setMinorTickSpacing(1);
+        sldStrengthSlider.setPaintTicks(true);
+        sldStrengthSlider.setSnapToTicks(true);
+
+        lblSpeedValue.setFont(new java.awt.Font("Montserrat", 1, 24)); // NOI18N
+        lblSpeedValue.setText("Speed:");
+
+        sldSpeedSlider.setMajorTickSpacing(5);
+        sldSpeedSlider.setMaximum(25);
+        sldSpeedSlider.setMinimum(1);
+        sldSpeedSlider.setMinorTickSpacing(1);
+        sldSpeedSlider.setPaintTicks(true);
+        sldSpeedSlider.setSnapToTicks(true);
+
+        lblStealthValue.setFont(new java.awt.Font("Montserrat", 1, 24)); // NOI18N
+        lblStealthValue.setText("Stealth:");
+
+        sldStealthSlider.setMajorTickSpacing(5);
+        sldStealthSlider.setMaximum(25);
+        sldStealthSlider.setMinimum(1);
+        sldStealthSlider.setMinorTickSpacing(1);
+        sldStealthSlider.setPaintTicks(true);
+
+        lblCunningValue.setFont(new java.awt.Font("Montserrat", 1, 24)); // NOI18N
+        lblCunningValue.setText("Cunning:");
+
+        sldCunningSlider.setMajorTickSpacing(5);
+        sldCunningSlider.setMaximum(25);
+        sldCunningSlider.setMinimum(1);
+        sldCunningSlider.setMinorTickSpacing(1);
+        sldCunningSlider.setPaintTicks(true);
+        sldCunningSlider.setSnapToTicks(true);
+        sldCunningSlider.setExtent(1);
+
+        txtStrengthInput.setFont(new java.awt.Font("Montserrat Medium", 0, 18)); // NOI18N
+        txtStrengthInput.setText("25");
+        txtStrengthInput.setToolTipText("");
+        txtStrengthInput.addActionListener(this::txtStrengthInputActionPerformed);
+
+        txtStrengthInput1.setFont(new java.awt.Font("Montserrat Medium", 0, 18)); // NOI18N
+        txtStrengthInput1.setText("25");
+        txtStrengthInput1.setToolTipText("");
+        txtStrengthInput1.addActionListener(this::txtStrengthInput1ActionPerformed);
+
+        txtStrengthInput2.setFont(new java.awt.Font("Montserrat Medium", 0, 18)); // NOI18N
+        txtStrengthInput2.setText("25");
+        txtStrengthInput2.setToolTipText("");
+        txtStrengthInput2.addActionListener(this::txtStrengthInput2ActionPerformed);
+
+        txtStrengthInput3.setFont(new java.awt.Font("Montserrat Medium", 0, 18)); // NOI18N
+        txtStrengthInput3.setText("25");
+        txtStrengthInput3.setToolTipText("");
+        txtStrengthInput3.addActionListener(this::txtStrengthInput3ActionPerformed);
+
+        btnCreateCard.setBackground(new java.awt.Color(126, 217, 87));
+        btnCreateCard.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
+        btnCreateCard.setForeground(new java.awt.Color(255, 255, 255));
+        btnCreateCard.setText("Create");
+        btnCreateCard.addActionListener(this::btnCreateCardActionPerformed);
+
+        btnQuitCreate.setBackground(new java.awt.Color(204, 0, 0));
+        btnQuitCreate.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
+        btnQuitCreate.setForeground(new java.awt.Color(255, 255, 255));
+        btnQuitCreate.setText("Quit");
+        btnQuitCreate.addActionListener(this::btnQuitCreateActionPerformed);
+
+        btnDiscardCard.setBackground(new java.awt.Color(204, 163, 0));
+        btnDiscardCard.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
+        btnDiscardCard.setForeground(new java.awt.Color(255, 255, 255));
+        btnDiscardCard.setText("Discard");
+        btnDiscardCard.addActionListener(this::btnDiscardCardActionPerformed);
+
+        btnUploadImage.setBackground(new java.awt.Color(0, 37, 204));
+        btnUploadImage.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        btnUploadImage.setForeground(new java.awt.Color(255, 255, 255));
+        btnUploadImage.setText("Upload Image");
+        btnUploadImage.addActionListener(this::btnUploadImageActionPerformed);
+
+        btnChooseImage.setBackground(new java.awt.Color(126, 217, 87));
+        btnChooseImage.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        btnChooseImage.setForeground(new java.awt.Color(255, 255, 255));
+        btnChooseImage.setText("Choose Image");
+        btnChooseImage.addActionListener(this::btnChooseImageActionPerformed);
+
+        lblResizeImageTip.setFont(new java.awt.Font("Montserrat Medium", 0, 18)); // NOI18N
+        lblResizeImageTip.setText("You can resize an image by opening it in Photos, then resizing it down.");
+
+        lblUploadImageTip.setFont(new java.awt.Font("Montserrat Medium", 0, 18)); // NOI18N
+        lblUploadImageTip.setText("Uploaded Images must be 75x75 pixels, and be either JPG or PNG.");
+
+        javax.swing.GroupLayout pnlCreatePanelLayout = new javax.swing.GroupLayout(pnlCreatePanel);
+        pnlCreatePanel.setLayout(pnlCreatePanelLayout);
+        pnlCreatePanelLayout.setHorizontalGroup(
+            pnlCreatePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlCreatePanelLayout.createSequentialGroup()
+                .addGroup(pnlCreatePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlCreatePanelLayout.createSequentialGroup()
+                        .addGap(267, 267, 267)
+                        .addComponent(lblCreateTitle))
+                    .addGroup(pnlCreatePanelLayout.createSequentialGroup()
+                        .addGap(146, 146, 146)
+                        .addComponent(pnlCreatedCard, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(pnlCreatePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblCreateCard)
+                            .addComponent(lblStrengthValue)
+                            .addComponent(lblSpeedValue)
+                            .addComponent(lblStealthValue)
+                            .addComponent(lblCunningValue))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(pnlCreatePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtCreateCardNameEntry, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(pnlCreatePanelLayout.createSequentialGroup()
+                                .addComponent(sldStrengthSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txtStrengthInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(pnlCreatePanelLayout.createSequentialGroup()
+                                .addComponent(sldSpeedSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txtStrengthInput1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(pnlCreatePanelLayout.createSequentialGroup()
+                                .addComponent(sldStealthSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txtStrengthInput2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(pnlCreatePanelLayout.createSequentialGroup()
+                        .addGap(146, 146, 146)
+                        .addGroup(pnlCreatePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlCreatePanelLayout.createSequentialGroup()
+                                .addComponent(btnCreateCard, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(pnlCreatePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(pnlCreatePanelLayout.createSequentialGroup()
+                                        .addGap(111, 111, 111)
+                                        .addComponent(sldCunningSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(txtStrengthInput3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(pnlCreatePanelLayout.createSequentialGroup()
+                                        .addComponent(btnDiscardCard, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(btnQuitCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(pnlCreatePanelLayout.createSequentialGroup()
+                                        .addComponent(btnChooseImage, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(btnUploadImage, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(lblUploadImageTip, javax.swing.GroupLayout.PREFERRED_SIZE, 614, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(pnlCreatePanelLayout.createSequentialGroup()
+                        .addGap(132, 132, 132)
+                        .addComponent(lblResizeImageTip, javax.swing.GroupLayout.PREFERRED_SIZE, 650, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(226, Short.MAX_VALUE))
+        );
+        pnlCreatePanelLayout.setVerticalGroup(
+            pnlCreatePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlCreatePanelLayout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addComponent(lblCreateTitle)
+                .addGap(18, 18, 18)
+                .addGroup(pnlCreatePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(pnlCreatePanelLayout.createSequentialGroup()
+                        .addGroup(pnlCreatePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(txtCreateCardNameEntry, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblCreateCard, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addGroup(pnlCreatePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblStrengthValue)
+                            .addComponent(sldStrengthSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtStrengthInput, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlCreatePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblSpeedValue)
+                            .addComponent(sldSpeedSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtStrengthInput1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlCreatePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblStealthValue)
+                            .addComponent(sldStealthSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtStrengthInput2, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlCreatePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblCunningValue)
+                            .addComponent(sldCunningSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtStrengthInput3, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(pnlCreatedCard, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(pnlCreatePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnUploadImage, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnChooseImage, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(pnlCreatePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnQuitCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnDiscardCard, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCreateCard, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(32, 32, 32)
+                .addComponent(lblUploadImageTip, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(lblResizeImageTip, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(89, Short.MAX_VALUE))
+        );
+
+        pnlParentPanel.add(pnlCreatePanel, "card3");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlHomePanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(pnlParentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1180, Short.MAX_VALUE))
+            .addComponent(pnlParentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(pnlHomePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(pnlParentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 725, Short.MAX_VALUE))
+            .addComponent(pnlParentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pnlParentPanel.getAccessibleContext().setAccessibleName("");
@@ -162,11 +1281,21 @@ public class MonsterCardCatalogue extends javax.swing.JFrame {
     }// </editor-fold>                        
 
     private void btnTextFileOutputActionPerformed(java.awt.event.ActionEvent evt) {                                                  
-        // TODO add your handling code here:
+        File monsterCataloguetxt = new File("src/EOY_project/cardListTextFile.txt");
+        
+        try(Scanner fileReader = new Scanner(monsterCataloguetxt)) {
+            while(fileReader.hasNextLine()) {
+                String line = fileReader.nextLine();
+                System.out.println(line);
+            }
+        } catch(FileNotFoundException e) {
+             System.out.println(e);
+        }
+        
     }                                                 
 
     private void btnQuitButtonActionPerformed(java.awt.event.ActionEvent evt) {                                              
-        // TODO add your handling code here:
+        System.exit(0);
     }                                             
 
     private void btnSearchButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                
@@ -174,12 +1303,55 @@ public class MonsterCardCatalogue extends javax.swing.JFrame {
     }                                               
 
     private void btnCreateButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                
-        // TODO add your handling code here:
+        pnlParentPanel.removeAll();
+        pnlParentPanel.add(pnlCreatePanel);
+        pnlParentPanel.repaint();
+        pnlParentPanel.revalidate();
     }                                               
 
     private void btnDeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                
         // TODO add your handling code here:
     }                                               
+
+    private void txtCreateCardNameEntryActionPerformed(java.awt.event.ActionEvent evt) {                                                       
+        // TODO add your handling code here:
+    }                                                      
+
+    private void txtStrengthInputActionPerformed(java.awt.event.ActionEvent evt) {                                                 
+        // TODO add your handling code here:
+    }                                                
+
+    private void txtStrengthInput1ActionPerformed(java.awt.event.ActionEvent evt) {                                                  
+        // TODO add your handling code here:
+    }                                                 
+
+    private void txtStrengthInput2ActionPerformed(java.awt.event.ActionEvent evt) {                                                  
+        // TODO add your handling code here:
+    }                                                 
+
+    private void txtStrengthInput3ActionPerformed(java.awt.event.ActionEvent evt) {                                                  
+        // TODO add your handling code here:
+    }                                                 
+
+    private void btnCreateCardActionPerformed(java.awt.event.ActionEvent evt) {                                              
+        // TODO add your handling code here:
+    }                                             
+
+    private void btnQuitCreateActionPerformed(java.awt.event.ActionEvent evt) {                                              
+        System.exit(0);
+    }                                             
+
+    private void btnDiscardCardActionPerformed(java.awt.event.ActionEvent evt) {                                               
+        // TODO add your handling code here:
+    }                                              
+
+    private void btnUploadImageActionPerformed(java.awt.event.ActionEvent evt) {                                               
+        // TODO add your handling code here:
+    }                                              
+
+    private void btnChooseImageActionPerformed(java.awt.event.ActionEvent evt) {                                               
+        // TODO add your handling code here:
+    }                                              
 
     /**
      * @param args the command line arguments
@@ -204,17 +1376,118 @@ public class MonsterCardCatalogue extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> new MonsterCardCatalogue().setVisible(true));
+        
+
     }
 
     // Variables declaration - do not modify                     
+    private javax.swing.JButton btnChooseImage;
     private javax.swing.JButton btnCreateButton;
+    private javax.swing.JButton btnCreateCard;
     private javax.swing.JButton btnDeleteButton;
+    private javax.swing.JButton btnDiscardCard;
     private javax.swing.JButton btnQuitButton;
+    private javax.swing.JButton btnQuitCreate;
     private javax.swing.JButton btnSearchButton;
     private javax.swing.JButton btnTextFileOutput;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JButton btnUploadImage;
+    private javax.swing.JLabel lblCardCunning;
+    private javax.swing.JLabel lblCardCunning10;
+    private javax.swing.JLabel lblCardCunning2;
+    private javax.swing.JLabel lblCardCunning3;
+    private javax.swing.JLabel lblCardCunning4;
+    private javax.swing.JLabel lblCardCunning5;
+    private javax.swing.JLabel lblCardCunning6;
+    private javax.swing.JLabel lblCardCunning7;
+    private javax.swing.JLabel lblCardCunning8;
+    private javax.swing.JLabel lblCardCunning9;
+    private javax.swing.JLabel lblCardCunningCreated;
+    private javax.swing.JLabel lblCardImage;
+    private javax.swing.JLabel lblCardImage10;
+    private javax.swing.JLabel lblCardImage2;
+    private javax.swing.JLabel lblCardImage3;
+    private javax.swing.JLabel lblCardImage4;
+    private javax.swing.JLabel lblCardImage5;
+    private javax.swing.JLabel lblCardImage6;
+    private javax.swing.JLabel lblCardImage7;
+    private javax.swing.JLabel lblCardImage8;
+    private javax.swing.JLabel lblCardImage9;
+    private javax.swing.JLabel lblCardImageCreated;
+    private javax.swing.JLabel lblCardName;
+    private javax.swing.JLabel lblCardName10;
+    private javax.swing.JLabel lblCardName2;
+    private javax.swing.JLabel lblCardName3;
+    private javax.swing.JLabel lblCardName4;
+    private javax.swing.JLabel lblCardName5;
+    private javax.swing.JLabel lblCardName6;
+    private javax.swing.JLabel lblCardName7;
+    private javax.swing.JLabel lblCardName8;
+    private javax.swing.JLabel lblCardName9;
+    private javax.swing.JLabel lblCardNameCreated;
+    private javax.swing.JLabel lblCardSpeed;
+    private javax.swing.JLabel lblCardSpeed10;
+    private javax.swing.JLabel lblCardSpeed2;
+    private javax.swing.JLabel lblCardSpeed3;
+    private javax.swing.JLabel lblCardSpeed4;
+    private javax.swing.JLabel lblCardSpeed5;
+    private javax.swing.JLabel lblCardSpeed6;
+    private javax.swing.JLabel lblCardSpeed7;
+    private javax.swing.JLabel lblCardSpeed8;
+    private javax.swing.JLabel lblCardSpeed9;
+    private javax.swing.JLabel lblCardSpeedCreated;
+    private javax.swing.JLabel lblCardStealth;
+    private javax.swing.JLabel lblCardStealth10;
+    private javax.swing.JLabel lblCardStealth2;
+    private javax.swing.JLabel lblCardStealth3;
+    private javax.swing.JLabel lblCardStealth4;
+    private javax.swing.JLabel lblCardStealth5;
+    private javax.swing.JLabel lblCardStealth6;
+    private javax.swing.JLabel lblCardStealth7;
+    private javax.swing.JLabel lblCardStealth8;
+    private javax.swing.JLabel lblCardStealth9;
+    private javax.swing.JLabel lblCardStealthCreated;
+    private javax.swing.JLabel lblCardStrength;
+    private javax.swing.JLabel lblCardStrength10;
+    private javax.swing.JLabel lblCardStrength2;
+    private javax.swing.JLabel lblCardStrength3;
+    private javax.swing.JLabel lblCardStrength4;
+    private javax.swing.JLabel lblCardStrength5;
+    private javax.swing.JLabel lblCardStrength6;
+    private javax.swing.JLabel lblCardStrength7;
+    private javax.swing.JLabel lblCardStrength8;
+    private javax.swing.JLabel lblCardStrength9;
+    private javax.swing.JLabel lblCardStrengthCreated;
+    private javax.swing.JLabel lblCreateCard;
+    private javax.swing.JLabel lblCreateTitle;
+    private javax.swing.JLabel lblCunningValue;
+    private javax.swing.JLabel lblResizeImageTip;
+    private javax.swing.JLabel lblSpeedValue;
+    private javax.swing.JLabel lblStealthValue;
+    private javax.swing.JLabel lblStrengthValue;
     private javax.swing.JLabel lblTitle;
+    private javax.swing.JLabel lblUploadImageTip;
+    private javax.swing.JPanel pnlCard1;
+    private javax.swing.JPanel pnlCard10;
+    private javax.swing.JPanel pnlCard2;
+    private javax.swing.JPanel pnlCard3;
+    private javax.swing.JPanel pnlCard4;
+    private javax.swing.JPanel pnlCard5;
+    private javax.swing.JPanel pnlCard6;
+    private javax.swing.JPanel pnlCard7;
+    private javax.swing.JPanel pnlCard8;
+    private javax.swing.JPanel pnlCard9;
+    private javax.swing.JPanel pnlCreatePanel;
+    private javax.swing.JPanel pnlCreatedCard;
     private javax.swing.JPanel pnlHomePanel;
     private javax.swing.JPanel pnlParentPanel;
+    private javax.swing.JSlider sldCunningSlider;
+    private javax.swing.JSlider sldSpeedSlider;
+    private javax.swing.JSlider sldStealthSlider;
+    private javax.swing.JSlider sldStrengthSlider;
+    private javax.swing.JTextField txtCreateCardNameEntry;
+    private javax.swing.JTextField txtStrengthInput;
+    private javax.swing.JTextField txtStrengthInput1;
+    private javax.swing.JTextField txtStrengthInput2;
+    private javax.swing.JTextField txtStrengthInput3;
     // End of variables declaration                   
 }

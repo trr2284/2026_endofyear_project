@@ -5,6 +5,6 @@
 {"Vortexwing", "src/EOY_project/Vortexwing.png", "19", "13", "19", "2", "P"}
 {"Froststep", "src/EOY_project/Froststep.png", "14", "14", "17", "4", "P"}
 {"Whispghoul", "src/EOY_project/Whispghoul.png", "17", "19", "3", "2", "P"}
-{"NULL","Placeholder.jpg", "1", "1", "1", "1", "E"}
-{"NULL","Placeholder.jpg", "1", "1", "1", "1", "E"}
-{"NULL","Placeholder.jpg", "1", "1", "1", "1", "E"}
+{"NULL","src/EOY_project/Placeholder.jpg", "1", "1", "1", "1", "E"}
+{"NULL","src/EOY_project/Placeholder.jpg", "1", "1", "1", "1", "E"}
+{"NULL","src/EOY_project/Placeholder.jpg", "1", "1", "1", "1", "E"}

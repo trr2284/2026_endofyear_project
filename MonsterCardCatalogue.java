@@ -10,11 +10,49 @@ import java.util.Scanner;
 
 
 
+
 /**
  *
  * @author 23038
  */
 public class MonsterCardCatalogue extends javax.swing.JFrame {
+    
+    String cardList[][] = {
+        {"NULL","src/EOY_project/Placeholder.jpg", "1", "1", "1", "1", "E"},
+        {"NULL","src/EOY_project/Placeholder.jpg", "1", "1", "1", "1", "E"},
+        {"NULL","src/EOY_project/Placeholder.jpg", "1", "1", "1", "1", "E"},
+        {"NULL","src/EOY_project/Placeholder.jpg", "1", "1", "1", "1", "E"},
+        {"NULL","src/EOY_project/Placeholder.jpg", "1", "1", "1", "1", "E"},
+        {"NULL","src/EOY_project/Placeholder.jpg", "1", "1", "1", "1", "E"},
+        {"NULL","src/EOY_project/Placeholder.jpg", "1", "1", "1", "1", "E"},
+        {"NULL","src/EOY_project/Placeholder.jpg", "1", "1", "1", "1", "E"},
+        {"NULL","src/EOY_project/Placeholder.jpg", "1", "1", "1", "1", "E"},
+        {"NULL","src/EOY_project/Placeholder.jpg", "1", "1", "1", "1", "E"}
+    };
+    
+
+    
+    String name;
+    String imageLink;
+    int strength;
+    int speed;
+    int stealth;
+    int cunning;
+    String cardType;
+    int STATCAPMIN;
+    int STATCAPMAX;
+    boolean confirmCard;
+    String sortMethod;
+    String cardToSearch;
+    
+    // temp variables
+    int loopedLine;
+    
+    
+    // declare
+
+    
+    
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(MonsterCardCatalogue.class.getName());
 
@@ -22,7 +60,26 @@ public class MonsterCardCatalogue extends javax.swing.JFrame {
      * Creates new form NewJFrame
      */
     public MonsterCardCatalogue() {
+        STATCAPMIN = 1;
+        STATCAPMAX = 25;
+        
+        
+        File monsterCataloguetxt = new File("src/EOY_project/cardListTextFile.txt");
+        
+        try(Scanner fileReader = new Scanner(monsterCataloguetxt)) {
+            while(fileReader.hasNextLine()) {
+                System.out.println(loopedLine);
+                String line = fileReader.nextLine();
+                String[] lineReplace = line.split(",");
+                cardList[loopedLine] = lineReplace;
+                loopedLine += 1;
+            }
+        } catch(FileNotFoundException e) {
+             System.out.println(e);
+        }
+        
         initComponents();
+        cardRender();
     }
 
     /**
@@ -43,12 +100,12 @@ public class MonsterCardCatalogue extends javax.swing.JFrame {
         btnCreateButton = new javax.swing.JButton();
         btnDeleteButton = new javax.swing.JButton();
         pnlCard1 = new javax.swing.JPanel();
-        lblCardImage = new javax.swing.JLabel();
-        lblCardName = new javax.swing.JLabel();
-        lblCardStrength = new javax.swing.JLabel();
-        lblCardSpeed = new javax.swing.JLabel();
-        lblCardStealth = new javax.swing.JLabel();
-        lblCardCunning = new javax.swing.JLabel();
+        lblCardImage1 = new javax.swing.JLabel();
+        lblCardName1 = new javax.swing.JLabel();
+        lblCardStrength1 = new javax.swing.JLabel();
+        lblCardSpeed1 = new javax.swing.JLabel();
+        lblCardStealth1 = new javax.swing.JLabel();
+        lblCardCunning1 = new javax.swing.JLabel();
         pnlCard2 = new javax.swing.JPanel();
         lblCardImage2 = new javax.swing.JLabel();
         lblCardName2 = new javax.swing.JLabel();
@@ -188,28 +245,28 @@ public class MonsterCardCatalogue extends javax.swing.JFrame {
 
         pnlCard1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
 
-        lblCardImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/eoy_project/placeholder.jpg"))); // NOI18N
-        lblCardImage.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        lblCardImage1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/eoy_project/placeholder.jpg"))); // NOI18N
+        lblCardImage1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
 
-        lblCardName.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
-        lblCardName.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        lblCardName.setText("[Name]");
+        lblCardName1.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        lblCardName1.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblCardName1.setText("[Name]");
 
-        lblCardStrength.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
-        lblCardStrength.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        lblCardStrength.setText("STR:25");
+        lblCardStrength1.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        lblCardStrength1.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblCardStrength1.setText("STR:25");
 
-        lblCardSpeed.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
-        lblCardSpeed.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        lblCardSpeed.setText("SPD:25");
+        lblCardSpeed1.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        lblCardSpeed1.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblCardSpeed1.setText("SPD:25");
 
-        lblCardStealth.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
-        lblCardStealth.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        lblCardStealth.setText("STH:25");
+        lblCardStealth1.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        lblCardStealth1.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblCardStealth1.setText("STH:25");
 
-        lblCardCunning.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
-        lblCardCunning.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        lblCardCunning.setText("CNG:25");
+        lblCardCunning1.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        lblCardCunning1.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblCardCunning1.setText("CNG:25");
 
         javax.swing.GroupLayout pnlCard1Layout = new javax.swing.GroupLayout(pnlCard1);
         pnlCard1.setLayout(pnlCard1Layout);
@@ -221,39 +278,39 @@ public class MonsterCardCatalogue extends javax.swing.JFrame {
                         .addGroup(pnlCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(pnlCard1Layout.createSequentialGroup()
                                 .addGap(32, 32, 32)
-                                .addComponent(lblCardName))
+                                .addComponent(lblCardName1))
                             .addGroup(pnlCard1Layout.createSequentialGroup()
                                 .addGap(20, 20, 20)
-                                .addComponent(lblCardImage)))
+                                .addComponent(lblCardImage1)))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(pnlCard1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(pnlCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(pnlCard1Layout.createSequentialGroup()
-                                .addComponent(lblCardStrength)
+                                .addComponent(lblCardStrength1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(lblCardSpeed))
+                                .addComponent(lblCardSpeed1))
                             .addGroup(pnlCard1Layout.createSequentialGroup()
-                                .addComponent(lblCardStealth)
+                                .addComponent(lblCardStealth1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
-                                .addComponent(lblCardCunning)))))
+                                .addComponent(lblCardCunning1)))))
                 .addContainerGap())
         );
         pnlCard1Layout.setVerticalGroup(
             pnlCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlCard1Layout.createSequentialGroup()
                 .addGap(8, 8, 8)
-                .addComponent(lblCardImage)
+                .addComponent(lblCardImage1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblCardName)
+                .addComponent(lblCardName1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnlCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblCardStrength)
-                    .addComponent(lblCardSpeed))
+                    .addComponent(lblCardStrength1)
+                    .addComponent(lblCardSpeed1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(pnlCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblCardStealth)
-                    .addComponent(lblCardCunning))
+                    .addComponent(lblCardStealth1)
+                    .addComponent(lblCardCunning1))
                 .addContainerGap(22, Short.MAX_VALUE))
         );
 
@@ -1280,6 +1337,10 @@ public class MonsterCardCatalogue extends javax.swing.JFrame {
         pack();
     }// </editor-fold>                        
 
+    
+    
+    
+    
     private void btnTextFileOutputActionPerformed(java.awt.event.ActionEvent evt) {                                                  
         File monsterCataloguetxt = new File("src/EOY_project/cardListTextFile.txt");
         
@@ -1291,6 +1352,7 @@ public class MonsterCardCatalogue extends javax.swing.JFrame {
         } catch(FileNotFoundException e) {
              System.out.println(e);
         }
+       
         
     }                                                 
 
@@ -1379,6 +1441,29 @@ public class MonsterCardCatalogue extends javax.swing.JFrame {
         
 
     }
+    
+        public void cardRender() {
+            javax.swing.JLabel labelList[][] = {
+                {lblCardImage1, lblCardName1, lblCardStrength1, lblCardSpeed1, lblCardStealth1, lblCardCunning1},
+                {lblCardImage2, lblCardName2, lblCardStrength2, lblCardSpeed2, lblCardStealth2, lblCardCunning2},
+                {lblCardImage3, lblCardName3, lblCardStrength3, lblCardSpeed3, lblCardStealth3, lblCardCunning3},
+                {lblCardImage4, lblCardName4, lblCardStrength4, lblCardSpeed4, lblCardStealth4, lblCardCunning4},
+                {lblCardImage5, lblCardName5, lblCardStrength5, lblCardSpeed5, lblCardStealth5, lblCardCunning5},
+                {lblCardImage6, lblCardName6, lblCardStrength6, lblCardSpeed6, lblCardStealth6, lblCardCunning6},
+                {lblCardImage7, lblCardName7, lblCardStrength7, lblCardSpeed7, lblCardStealth7, lblCardCunning7},
+                {lblCardImage8, lblCardName8, lblCardStrength8, lblCardSpeed8, lblCardStealth8, lblCardCunning8},
+                {lblCardImage9, lblCardName9, lblCardStrength9, lblCardSpeed9, lblCardStealth9, lblCardCunning9},
+                {lblCardImage10, lblCardName10, lblCardStrength10, lblCardSpeed10, lblCardStealth10, lblCardCunning10},
+            };
+            
+            for (int i = 0; i != 10; i = i + 1){
+                System.out.println(i);
+            }
+            
+        }
+        
+    
+    
 
     // Variables declaration - do not modify                     
     private javax.swing.JButton btnChooseImage;
@@ -1391,7 +1476,7 @@ public class MonsterCardCatalogue extends javax.swing.JFrame {
     private javax.swing.JButton btnSearchButton;
     private javax.swing.JButton btnTextFileOutput;
     private javax.swing.JButton btnUploadImage;
-    private javax.swing.JLabel lblCardCunning;
+    private javax.swing.JLabel lblCardCunning1;
     private javax.swing.JLabel lblCardCunning10;
     private javax.swing.JLabel lblCardCunning2;
     private javax.swing.JLabel lblCardCunning3;
@@ -1402,7 +1487,7 @@ public class MonsterCardCatalogue extends javax.swing.JFrame {
     private javax.swing.JLabel lblCardCunning8;
     private javax.swing.JLabel lblCardCunning9;
     private javax.swing.JLabel lblCardCunningCreated;
-    private javax.swing.JLabel lblCardImage;
+    private javax.swing.JLabel lblCardImage1;
     private javax.swing.JLabel lblCardImage10;
     private javax.swing.JLabel lblCardImage2;
     private javax.swing.JLabel lblCardImage3;
@@ -1413,7 +1498,7 @@ public class MonsterCardCatalogue extends javax.swing.JFrame {
     private javax.swing.JLabel lblCardImage8;
     private javax.swing.JLabel lblCardImage9;
     private javax.swing.JLabel lblCardImageCreated;
-    private javax.swing.JLabel lblCardName;
+    private javax.swing.JLabel lblCardName1;
     private javax.swing.JLabel lblCardName10;
     private javax.swing.JLabel lblCardName2;
     private javax.swing.JLabel lblCardName3;
@@ -1424,7 +1509,7 @@ public class MonsterCardCatalogue extends javax.swing.JFrame {
     private javax.swing.JLabel lblCardName8;
     private javax.swing.JLabel lblCardName9;
     private javax.swing.JLabel lblCardNameCreated;
-    private javax.swing.JLabel lblCardSpeed;
+    private javax.swing.JLabel lblCardSpeed1;
     private javax.swing.JLabel lblCardSpeed10;
     private javax.swing.JLabel lblCardSpeed2;
     private javax.swing.JLabel lblCardSpeed3;
@@ -1435,7 +1520,7 @@ public class MonsterCardCatalogue extends javax.swing.JFrame {
     private javax.swing.JLabel lblCardSpeed8;
     private javax.swing.JLabel lblCardSpeed9;
     private javax.swing.JLabel lblCardSpeedCreated;
-    private javax.swing.JLabel lblCardStealth;
+    private javax.swing.JLabel lblCardStealth1;
     private javax.swing.JLabel lblCardStealth10;
     private javax.swing.JLabel lblCardStealth2;
     private javax.swing.JLabel lblCardStealth3;
@@ -1446,7 +1531,7 @@ public class MonsterCardCatalogue extends javax.swing.JFrame {
     private javax.swing.JLabel lblCardStealth8;
     private javax.swing.JLabel lblCardStealth9;
     private javax.swing.JLabel lblCardStealthCreated;
-    private javax.swing.JLabel lblCardStrength;
+    private javax.swing.JLabel lblCardStrength1;
     private javax.swing.JLabel lblCardStrength10;
     private javax.swing.JLabel lblCardStrength2;
     private javax.swing.JLabel lblCardStrength3;

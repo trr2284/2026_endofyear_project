@@ -1,10 +1,10 @@
-{"Vexscream", "src/EOY_project/Vexscream.png", "1", "6", "21", "19", "P"}
-{"Dawnmirage", "src/EOY_project/Dawnmirage.png", "5", "15", "18", "22", "P"}
-{"Blazegolem", "src/EOY_project/Blazegolem.png", "15", "20", "23", "6", "P"}
-{"Moldvine", "src/EOY_project/Moldvine.png", "21", "18", "14", "5", "P"}
-{"Vortexwing", "src/EOY_project/Vortexwing.png", "19", "13", "19", "2", "P"}
-{"Froststep", "src/EOY_project/Froststep.png", "14", "14", "17", "4", "P"}
-{"Whispghoul", "src/EOY_project/Whispghoul.png", "17", "19", "3", "2", "P"}
-{"NULL","src/EOY_project/Placeholder.jpg", "1", "1", "1", "1", "E"}
-{"NULL","src/EOY_project/Placeholder.jpg", "1", "1", "1", "1", "E"}
-{"NULL","src/EOY_project/Placeholder.jpg", "1", "1", "1", "1", "E"}
+Vexscream,10,1,6,21,19,P
+Dawnmirage,3,5,15,18,22,P
+Blazegolem,1,15,20,23,6,P
+Moldvine,6,21,18,14,5,P
+Vortexwing,11,19,13,19,2,P
+Froststep,5,14,14,17,4,P
+Whispghoul,13,17,19,3,2,P
+NULL,14,1,1,1,1,E
+NULL,14,1,1,1,1,E
+NULL,14,1,1,1,1,E

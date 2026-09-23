@@ -6,7 +6,13 @@ package eoy_project;
 
 import java.io.File; 
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Arrays;
 import java.util.Scanner; 
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 
 
@@ -18,22 +24,44 @@ import java.util.Scanner;
 public class MonsterCardCatalogue extends javax.swing.JFrame {
     
     String cardList[][] = {
-        {"NULL","src/EOY_project/Placeholder.jpg", "1", "1", "1", "1", "E"},
-        {"NULL","src/EOY_project/Placeholder.jpg", "1", "1", "1", "1", "E"},
-        {"NULL","src/EOY_project/Placeholder.jpg", "1", "1", "1", "1", "E"},
-        {"NULL","src/EOY_project/Placeholder.jpg", "1", "1", "1", "1", "E"},
-        {"NULL","src/EOY_project/Placeholder.jpg", "1", "1", "1", "1", "E"},
-        {"NULL","src/EOY_project/Placeholder.jpg", "1", "1", "1", "1", "E"},
-        {"NULL","src/EOY_project/Placeholder.jpg", "1", "1", "1", "1", "E"},
-        {"NULL","src/EOY_project/Placeholder.jpg", "1", "1", "1", "1", "E"},
-        {"NULL","src/EOY_project/Placeholder.jpg", "1", "1", "1", "1", "E"},
-        {"NULL","src/EOY_project/Placeholder.jpg", "1", "1", "1", "1", "E"}
+        {"NULL","14", "1", "1", "1", "1", "E"},
+        {"NULL","14", "1", "1", "1", "1", "E"},
+        {"NULL","14", "1", "1", "1", "1", "E"},
+        {"NULL","14", "1", "1", "1", "1", "E"},
+        {"NULL","14", "1", "1", "1", "1", "E"},
+        {"NULL","14", "1", "1", "1", "1", "E"},
+        {"NULL","14", "1", "1", "1", "1", "E"},
+        {"NULL","14", "1", "1", "1", "1", "E"},
+        {"NULL","14", "1", "1", "1", "1", "E"},
+        {"NULL","14", "1", "1", "1", "1", "E"}
     };
+    
+    Icon imageList[] = {
+        new ImageIcon ("src/EOY_project/Barkspike.png"), 
+        new ImageIcon ("src/EOY_project/Blazegolem.png"), 
+        new ImageIcon ("src/EOY_project/Clusters.png"),
+        new ImageIcon ("src/EOY_project/Dawnmirage.png"),
+        new ImageIcon ("src/EOY_project/Deca.png"),
+        new ImageIcon ("src/EOY_project/Froststep.png"),
+        new ImageIcon ("src/EOY_project/Moldvine.png"),
+        new ImageIcon ("src/EOY_project/Placeholder.jpg"),
+        new ImageIcon ("src/EOY_project/Planetary.png"),
+        new ImageIcon ("src/EOY_project/Sandworm.png"),
+        new ImageIcon ("src/EOY_project/Vexscream.png"),
+        new ImageIcon ("src/EOY_project/Vortexwing.png"),
+        new ImageIcon ("src/EOY_project/Winged.png"),
+        new ImageIcon ("src/EOY_project/Wispghoul.png"),
+        new ImageIcon ("src/EOY_project/Placeholder.jpg")
+    };
+    
+    
+    
+    // jobj.setIcon(name);
     
 
     
     String name;
-    String imageLink;
+    int image;
     int strength;
     int speed;
     int stealth;
@@ -41,15 +69,15 @@ public class MonsterCardCatalogue extends javax.swing.JFrame {
     String cardType;
     int STATCAPMIN;
     int STATCAPMAX;
+    int cardTotalStats;
     boolean confirmCard;
     String sortMethod;
     String cardToSearch;
     
     // temp variables
-    int loopedLine;
+    int lineCount;
     
     
-    // declare
 
     
     
@@ -60,23 +88,28 @@ public class MonsterCardCatalogue extends javax.swing.JFrame {
      * Creates new form NewJFrame
      */
     public MonsterCardCatalogue() {
+        // declare
         STATCAPMIN = 1;
         STATCAPMAX = 25;
-        
-        
+        lineCount = 0;
+
         File monsterCataloguetxt = new File("src/EOY_project/cardListTextFile.txt");
         
         try(Scanner fileReader = new Scanner(monsterCataloguetxt)) {
-            while(fileReader.hasNextLine()) {
-                System.out.println(loopedLine);
+            while(fileReader.hasNextLine()) {        
                 String line = fileReader.nextLine();
-                String[] lineReplace = line.split(",");
-                cardList[loopedLine] = lineReplace;
-                loopedLine += 1;
+                String[] getLine = line.split(",");
+                System.out.println(Arrays.toString(getLine));
+                cardList[lineCount] = (getLine);
+                lineCount++;
             }
+            
+            System.out.println(Arrays.deepToString(cardList));
         } catch(FileNotFoundException e) {
              System.out.println(e);
         }
+        
+//        System.out.println(Arrays.deepToString(cardList));
         
         initComponents();
         cardRender();
@@ -181,24 +214,19 @@ public class MonsterCardCatalogue extends javax.swing.JFrame {
         lblCreateCard = new javax.swing.JLabel();
         txtCreateCardNameEntry = new javax.swing.JTextField();
         lblStrengthValue = new javax.swing.JLabel();
-        sldStrengthSlider = new javax.swing.JSlider();
         lblSpeedValue = new javax.swing.JLabel();
-        sldSpeedSlider = new javax.swing.JSlider();
         lblStealthValue = new javax.swing.JLabel();
-        sldStealthSlider = new javax.swing.JSlider();
         lblCunningValue = new javax.swing.JLabel();
-        sldCunningSlider = new javax.swing.JSlider();
         txtStrengthInput = new javax.swing.JTextField();
-        txtStrengthInput1 = new javax.swing.JTextField();
-        txtStrengthInput2 = new javax.swing.JTextField();
-        txtStrengthInput3 = new javax.swing.JTextField();
-        btnCreateCard = new javax.swing.JButton();
+        txtSpeedInput = new javax.swing.JTextField();
+        txtStealthInput = new javax.swing.JTextField();
+        txtCunningInput = new javax.swing.JTextField();
+        btnRenderCard = new javax.swing.JButton();
         btnQuitCreate = new javax.swing.JButton();
         btnDiscardCard = new javax.swing.JButton();
-        btnUploadImage = new javax.swing.JButton();
-        btnChooseImage = new javax.swing.JButton();
-        lblResizeImageTip = new javax.swing.JLabel();
-        lblUploadImageTip = new javax.swing.JLabel();
+        lblImageToChoose = new javax.swing.JLabel();
+        txtImageInput = new javax.swing.JTextField();
+        btnCreateCard = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAutoRequestFocus(false);
@@ -1111,75 +1139,47 @@ public class MonsterCardCatalogue extends javax.swing.JFrame {
         lblCreateCard.setFont(new java.awt.Font("Montserrat", 1, 24)); // NOI18N
         lblCreateCard.setText("Name:");
 
-        txtCreateCardNameEntry.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
+        txtCreateCardNameEntry.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
         txtCreateCardNameEntry.setText("\"Name\"");
         txtCreateCardNameEntry.addActionListener(this::txtCreateCardNameEntryActionPerformed);
 
         lblStrengthValue.setFont(new java.awt.Font("Montserrat", 1, 24)); // NOI18N
         lblStrengthValue.setText("Strength:");
 
-        sldStrengthSlider.setMajorTickSpacing(5);
-        sldStrengthSlider.setMaximum(25);
-        sldStrengthSlider.setMinimum(1);
-        sldStrengthSlider.setMinorTickSpacing(1);
-        sldStrengthSlider.setPaintTicks(true);
-        sldStrengthSlider.setSnapToTicks(true);
-
         lblSpeedValue.setFont(new java.awt.Font("Montserrat", 1, 24)); // NOI18N
         lblSpeedValue.setText("Speed:");
-
-        sldSpeedSlider.setMajorTickSpacing(5);
-        sldSpeedSlider.setMaximum(25);
-        sldSpeedSlider.setMinimum(1);
-        sldSpeedSlider.setMinorTickSpacing(1);
-        sldSpeedSlider.setPaintTicks(true);
-        sldSpeedSlider.setSnapToTicks(true);
 
         lblStealthValue.setFont(new java.awt.Font("Montserrat", 1, 24)); // NOI18N
         lblStealthValue.setText("Stealth:");
 
-        sldStealthSlider.setMajorTickSpacing(5);
-        sldStealthSlider.setMaximum(25);
-        sldStealthSlider.setMinimum(1);
-        sldStealthSlider.setMinorTickSpacing(1);
-        sldStealthSlider.setPaintTicks(true);
-
         lblCunningValue.setFont(new java.awt.Font("Montserrat", 1, 24)); // NOI18N
         lblCunningValue.setText("Cunning:");
-
-        sldCunningSlider.setMajorTickSpacing(5);
-        sldCunningSlider.setMaximum(25);
-        sldCunningSlider.setMinimum(1);
-        sldCunningSlider.setMinorTickSpacing(1);
-        sldCunningSlider.setPaintTicks(true);
-        sldCunningSlider.setSnapToTicks(true);
-        sldCunningSlider.setExtent(1);
 
         txtStrengthInput.setFont(new java.awt.Font("Montserrat Medium", 0, 18)); // NOI18N
         txtStrengthInput.setText("25");
         txtStrengthInput.setToolTipText("");
         txtStrengthInput.addActionListener(this::txtStrengthInputActionPerformed);
 
-        txtStrengthInput1.setFont(new java.awt.Font("Montserrat Medium", 0, 18)); // NOI18N
-        txtStrengthInput1.setText("25");
-        txtStrengthInput1.setToolTipText("");
-        txtStrengthInput1.addActionListener(this::txtStrengthInput1ActionPerformed);
+        txtSpeedInput.setFont(new java.awt.Font("Montserrat Medium", 0, 18)); // NOI18N
+        txtSpeedInput.setText("25");
+        txtSpeedInput.setToolTipText("");
+        txtSpeedInput.addActionListener(this::txtSpeedInputActionPerformed);
 
-        txtStrengthInput2.setFont(new java.awt.Font("Montserrat Medium", 0, 18)); // NOI18N
-        txtStrengthInput2.setText("25");
-        txtStrengthInput2.setToolTipText("");
-        txtStrengthInput2.addActionListener(this::txtStrengthInput2ActionPerformed);
+        txtStealthInput.setFont(new java.awt.Font("Montserrat Medium", 0, 18)); // NOI18N
+        txtStealthInput.setText("25");
+        txtStealthInput.setToolTipText("");
+        txtStealthInput.addActionListener(this::txtStealthInputActionPerformed);
 
-        txtStrengthInput3.setFont(new java.awt.Font("Montserrat Medium", 0, 18)); // NOI18N
-        txtStrengthInput3.setText("25");
-        txtStrengthInput3.setToolTipText("");
-        txtStrengthInput3.addActionListener(this::txtStrengthInput3ActionPerformed);
+        txtCunningInput.setFont(new java.awt.Font("Montserrat Medium", 0, 18)); // NOI18N
+        txtCunningInput.setText("25");
+        txtCunningInput.setToolTipText("");
+        txtCunningInput.addActionListener(this::txtCunningInputActionPerformed);
 
-        btnCreateCard.setBackground(new java.awt.Color(126, 217, 87));
-        btnCreateCard.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
-        btnCreateCard.setForeground(new java.awt.Color(255, 255, 255));
-        btnCreateCard.setText("Create");
-        btnCreateCard.addActionListener(this::btnCreateCardActionPerformed);
+        btnRenderCard.setBackground(new java.awt.Color(126, 217, 87));
+        btnRenderCard.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
+        btnRenderCard.setForeground(new java.awt.Color(255, 255, 255));
+        btnRenderCard.setText("Render");
+        btnRenderCard.addActionListener(this::btnRenderCardActionPerformed);
 
         btnQuitCreate.setBackground(new java.awt.Color(204, 0, 0));
         btnQuitCreate.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
@@ -1193,23 +1193,19 @@ public class MonsterCardCatalogue extends javax.swing.JFrame {
         btnDiscardCard.setText("Discard");
         btnDiscardCard.addActionListener(this::btnDiscardCardActionPerformed);
 
-        btnUploadImage.setBackground(new java.awt.Color(0, 37, 204));
-        btnUploadImage.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
-        btnUploadImage.setForeground(new java.awt.Color(255, 255, 255));
-        btnUploadImage.setText("Upload Image");
-        btnUploadImage.addActionListener(this::btnUploadImageActionPerformed);
+        lblImageToChoose.setFont(new java.awt.Font("Montserrat", 1, 24)); // NOI18N
+        lblImageToChoose.setText("Image:");
 
-        btnChooseImage.setBackground(new java.awt.Color(126, 217, 87));
-        btnChooseImage.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
-        btnChooseImage.setForeground(new java.awt.Color(255, 255, 255));
-        btnChooseImage.setText("Choose Image");
-        btnChooseImage.addActionListener(this::btnChooseImageActionPerformed);
+        txtImageInput.setFont(new java.awt.Font("Montserrat Medium", 0, 18)); // NOI18N
+        txtImageInput.setText("14");
+        txtImageInput.setToolTipText("");
+        txtImageInput.addActionListener(this::txtImageInputActionPerformed);
 
-        lblResizeImageTip.setFont(new java.awt.Font("Montserrat Medium", 0, 18)); // NOI18N
-        lblResizeImageTip.setText("You can resize an image by opening it in Photos, then resizing it down.");
-
-        lblUploadImageTip.setFont(new java.awt.Font("Montserrat Medium", 0, 18)); // NOI18N
-        lblUploadImageTip.setText("Uploaded Images must be 75x75 pixels, and be either JPG or PNG.");
+        btnCreateCard.setBackground(new java.awt.Color(126, 217, 87));
+        btnCreateCard.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
+        btnCreateCard.setForeground(new java.awt.Color(255, 255, 255));
+        btnCreateCard.setText("Create");
+        btnCreateCard.addActionListener(this::btnCreateCardActionPerformed);
 
         javax.swing.GroupLayout pnlCreatePanelLayout = new javax.swing.GroupLayout(pnlCreatePanel);
         pnlCreatePanel.setLayout(pnlCreatePanelLayout);
@@ -1229,47 +1225,27 @@ public class MonsterCardCatalogue extends javax.swing.JFrame {
                             .addComponent(lblStrengthValue)
                             .addComponent(lblSpeedValue)
                             .addComponent(lblStealthValue)
-                            .addComponent(lblCunningValue))
+                            .addComponent(lblCunningValue)
+                            .addComponent(lblImageToChoose))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(pnlCreatePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtCreateCardNameEntry, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(pnlCreatePanelLayout.createSequentialGroup()
-                                .addComponent(sldStrengthSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtStrengthInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(pnlCreatePanelLayout.createSequentialGroup()
-                                .addComponent(sldSpeedSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtStrengthInput1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(pnlCreatePanelLayout.createSequentialGroup()
-                                .addComponent(sldStealthSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtStrengthInput2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(txtImageInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtStealthInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtSpeedInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtCunningInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtStrengthInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(pnlCreatePanelLayout.createSequentialGroup()
-                        .addGap(146, 146, 146)
-                        .addGroup(pnlCreatePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(140, 140, 140)
+                        .addGroup(pnlCreatePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnCreateCard, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(pnlCreatePanelLayout.createSequentialGroup()
-                                .addComponent(btnCreateCard, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(pnlCreatePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(pnlCreatePanelLayout.createSequentialGroup()
-                                        .addGap(111, 111, 111)
-                                        .addComponent(sldCunningSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(txtStrengthInput3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(pnlCreatePanelLayout.createSequentialGroup()
-                                        .addComponent(btnDiscardCard, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(btnQuitCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(pnlCreatePanelLayout.createSequentialGroup()
-                                        .addComponent(btnChooseImage, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(btnUploadImage, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addComponent(lblUploadImageTip, javax.swing.GroupLayout.PREFERRED_SIZE, 614, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(pnlCreatePanelLayout.createSequentialGroup()
-                        .addGap(132, 132, 132)
-                        .addComponent(lblResizeImageTip, javax.swing.GroupLayout.PREFERRED_SIZE, 650, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(226, Short.MAX_VALUE))
+                                .addComponent(btnRenderCard, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnDiscardCard, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnQuitCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(437, Short.MAX_VALUE))
         );
         pnlCreatePanelLayout.setVerticalGroup(
             pnlCreatePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1280,43 +1256,37 @@ public class MonsterCardCatalogue extends javax.swing.JFrame {
                 .addGroup(pnlCreatePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(pnlCreatePanelLayout.createSequentialGroup()
                         .addGroup(pnlCreatePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(txtCreateCardNameEntry, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblCreateCard, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
-                        .addGroup(pnlCreatePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblCreateCard, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtCreateCardNameEntry))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlCreatePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(lblStrengthValue)
-                            .addComponent(sldStrengthSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtStrengthInput, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(pnlCreatePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblSpeedValue)
-                            .addComponent(sldSpeedSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtStrengthInput1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(pnlCreatePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblStealthValue)
-                            .addComponent(sldStealthSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtStrengthInput2, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(5, 5, 5)
+                        .addGroup(pnlCreatePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txtSpeedInput, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblSpeedValue))
+                        .addGap(5, 5, 5)
+                        .addGroup(pnlCreatePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txtStealthInput, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblStealthValue))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(pnlCreatePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblCunningValue)
-                            .addComponent(sldCunningSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtStrengthInput3, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(txtCunningInput, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(pnlCreatedCard, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnlCreatePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnUploadImage, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnChooseImage, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(lblImageToChoose)
+                    .addComponent(txtImageInput, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(21, 21, 21)
                 .addGroup(pnlCreatePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnQuitCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRenderCard, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnDiscardCard, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnCreateCard, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
-                .addComponent(lblUploadImageTip, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnQuitCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(lblResizeImageTip, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(89, Short.MAX_VALUE))
+                .addComponent(btnCreateCard, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(172, Short.MAX_VALUE))
         );
 
         pnlParentPanel.add(pnlCreatePanel, "card3");
@@ -1375,45 +1345,94 @@ public class MonsterCardCatalogue extends javax.swing.JFrame {
         // TODO add your handling code here:
     }                                               
 
-    private void txtCreateCardNameEntryActionPerformed(java.awt.event.ActionEvent evt) {                                                       
+    private void txtImageInputActionPerformed(java.awt.event.ActionEvent evt) {                                              
         // TODO add your handling code here:
-    }                                                      
-
-    private void txtStrengthInputActionPerformed(java.awt.event.ActionEvent evt) {                                                 
-        // TODO add your handling code here:
-    }                                                
-
-    private void txtStrengthInput1ActionPerformed(java.awt.event.ActionEvent evt) {                                                  
-        // TODO add your handling code here:
-    }                                                 
-
-    private void txtStrengthInput2ActionPerformed(java.awt.event.ActionEvent evt) {                                                  
-        // TODO add your handling code here:
-    }                                                 
-
-    private void txtStrengthInput3ActionPerformed(java.awt.event.ActionEvent evt) {                                                  
-        // TODO add your handling code here:
-    }                                                 
-
-    private void btnCreateCardActionPerformed(java.awt.event.ActionEvent evt) {                                              
-        // TODO add your handling code here:
-    }                                             
-
-    private void btnQuitCreateActionPerformed(java.awt.event.ActionEvent evt) {                                              
-        System.exit(0);
     }                                             
 
     private void btnDiscardCardActionPerformed(java.awt.event.ActionEvent evt) {                                               
         // TODO add your handling code here:
     }                                              
 
-    private void btnUploadImageActionPerformed(java.awt.event.ActionEvent evt) {                                               
-        // TODO add your handling code here:
-    }                                              
+    private void btnQuitCreateActionPerformed(java.awt.event.ActionEvent evt) {                                              
+        System.exit(0);
+    }                                             
 
-    private void btnChooseImageActionPerformed(java.awt.event.ActionEvent evt) {                                               
+    private void btnRenderCardActionPerformed(java.awt.event.ActionEvent evt) {                                              
+        name = txtCreateCardNameEntry.getText();
+        
+        try {
+            strength = Integer.parseInt(txtStrengthInput.getText());
+            speed = Integer.parseInt(txtSpeedInput.getText());
+            stealth = Integer.parseInt(txtStealthInput.getText());
+            cunning = Integer.parseInt(txtCunningInput.getText());
+            image = Integer.parseInt(txtImageInput.getText());
+        } catch(NumberFormatException e) {
+            JOptionPane.showMessageDialog(null,"Please input a numerical value for Strength, Speed, Stealth, Cunning and Image.","Invalid Value",JOptionPane.OK_CANCEL_OPTION);
+            throw new IllegalArgumentException("String was inputted where an integer was expected.");
+        }
+        
+        
+        if (strength > STATCAPMAX || strength < STATCAPMIN || speed > STATCAPMAX || speed < STATCAPMIN || stealth > STATCAPMAX || stealth < STATCAPMIN || cunning > STATCAPMAX || cunning < STATCAPMIN ) {
+            JOptionPane.showMessageDialog(null,"All card values must be kept between 1-25 for Strength, Speed, Stealth and Cunning.","Invalid Value",JOptionPane.OK_CANCEL_OPTION);
+            throw new IllegalArgumentException("All stats must be between 1-25");
+        } else if (0 > image || image > 14) {
+            JOptionPane.showMessageDialog(null,"Image values span between 0 and 14.","Invalid Value",JOptionPane.OK_CANCEL_OPTION);
+            throw new IllegalArgumentException("Image value must be between 0-14");
+        }
+        
+        lblCardImageCreated.setIcon(imageList[image]);
+        lblCardNameCreated.setText(name);
+        lblCardStrengthCreated.setText("STR: " + String.valueOf(strength));
+        lblCardSpeedCreated.setText("SPD: " + String.valueOf(speed));
+        lblCardStealthCreated.setText("STH: " + String.valueOf(stealth));
+        lblCardCunningCreated.setText("CNG: " + String.valueOf(cunning));
+
+
+    }                                             
+
+    private void txtCunningInputActionPerformed(java.awt.event.ActionEvent evt) {                                                
         // TODO add your handling code here:
-    }                                              
+    }                                               
+
+    private void txtStealthInputActionPerformed(java.awt.event.ActionEvent evt) {                                                
+        // TODO add your handling code here:
+    }                                               
+
+    private void txtSpeedInputActionPerformed(java.awt.event.ActionEvent evt) {                                              
+        // TODO add your handling code here:
+    }                                             
+
+    private void txtStrengthInputActionPerformed(java.awt.event.ActionEvent evt) {                                                 
+        // TODO add your handling code here:
+    }                                                
+
+    private void txtCreateCardNameEntryActionPerformed(java.awt.event.ActionEvent evt) {                                                       
+        // TODO add your handling code here:
+    }                                                      
+
+    private void btnCreateCardActionPerformed(java.awt.event.ActionEvent evt) {                                              
+        // TODO add your handling code here:
+        String[] getCreateCardData = {
+            String.valueOf(name),
+            String.valueOf(image),
+            String.valueOf(strength),
+            String.valueOf(speed),
+            String.valueOf(stealth),
+            String.valueOf(cunning),
+        };
+        
+        System.out.println(Arrays.toString(getCreateCardData));
+        
+        
+//        try {
+//            FileWriter myWriter = new FileWriter("src/FileHandling/testFile.txt", true);
+//            myWriter.write("helloooo");
+//            myWriter.close();
+//        } catch (IOException e) {
+//            System.out.println(e);
+//            e.printStackTrace();
+//        }
+    }                                             
 
     /**
      * @param args the command line arguments
@@ -1457,7 +1476,16 @@ public class MonsterCardCatalogue extends javax.swing.JFrame {
             };
             
             for (int i = 0; i != 10; i = i + 1){
-                System.out.println(i);
+                for (int j = 0; j != 7; j = j + 1){
+                    System.out.println(cardList[i][j]);
+                    System.out.println(i + ", " + j);
+                    labelList[i][0].setIcon(imageList[Integer.parseInt(cardList[i][1])]);
+                    labelList[i][1].setText(cardList[i][0]);
+                    labelList[i][2].setText("STR: " + cardList[i][2]);
+                    labelList[i][3].setText("SPD: " + cardList[i][3]);
+                    labelList[i][4].setText("STH: " + cardList[i][4]);
+                    labelList[i][5].setText("CNG: " + cardList[i][5]);
+                }
             }
             
         }
@@ -1466,16 +1494,15 @@ public class MonsterCardCatalogue extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify                     
-    private javax.swing.JButton btnChooseImage;
     private javax.swing.JButton btnCreateButton;
     private javax.swing.JButton btnCreateCard;
     private javax.swing.JButton btnDeleteButton;
     private javax.swing.JButton btnDiscardCard;
     private javax.swing.JButton btnQuitButton;
     private javax.swing.JButton btnQuitCreate;
+    private javax.swing.JButton btnRenderCard;
     private javax.swing.JButton btnSearchButton;
     private javax.swing.JButton btnTextFileOutput;
-    private javax.swing.JButton btnUploadImage;
     private javax.swing.JLabel lblCardCunning1;
     private javax.swing.JLabel lblCardCunning10;
     private javax.swing.JLabel lblCardCunning2;
@@ -1545,12 +1572,11 @@ public class MonsterCardCatalogue extends javax.swing.JFrame {
     private javax.swing.JLabel lblCreateCard;
     private javax.swing.JLabel lblCreateTitle;
     private javax.swing.JLabel lblCunningValue;
-    private javax.swing.JLabel lblResizeImageTip;
+    private javax.swing.JLabel lblImageToChoose;
     private javax.swing.JLabel lblSpeedValue;
     private javax.swing.JLabel lblStealthValue;
     private javax.swing.JLabel lblStrengthValue;
     private javax.swing.JLabel lblTitle;
-    private javax.swing.JLabel lblUploadImageTip;
     private javax.swing.JPanel pnlCard1;
     private javax.swing.JPanel pnlCard10;
     private javax.swing.JPanel pnlCard2;
@@ -1565,14 +1591,11 @@ public class MonsterCardCatalogue extends javax.swing.JFrame {
     private javax.swing.JPanel pnlCreatedCard;
     private javax.swing.JPanel pnlHomePanel;
     private javax.swing.JPanel pnlParentPanel;
-    private javax.swing.JSlider sldCunningSlider;
-    private javax.swing.JSlider sldSpeedSlider;
-    private javax.swing.JSlider sldStealthSlider;
-    private javax.swing.JSlider sldStrengthSlider;
     private javax.swing.JTextField txtCreateCardNameEntry;
+    private javax.swing.JTextField txtCunningInput;
+    private javax.swing.JTextField txtImageInput;
+    private javax.swing.JTextField txtSpeedInput;
+    private javax.swing.JTextField txtStealthInput;
     private javax.swing.JTextField txtStrengthInput;
-    private javax.swing.JTextField txtStrengthInput1;
-    private javax.swing.JTextField txtStrengthInput2;
-    private javax.swing.JTextField txtStrengthInput3;
     // End of variables declaration                   
 }
